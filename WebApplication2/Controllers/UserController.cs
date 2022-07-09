@@ -22,13 +22,13 @@ namespace WebApplication2.Controllers
         {
             User us = new User();
             us.FullName = form["fullname"].ToString();
-            us.Emailid = form["emailid"].ToString();
+            us.EmailId = form["emailid"].ToString();
             us.password = form["password"].ToString();
             us.RoleId = 2;
             int res = context.Save(us);
             if(res==1)
             {
-                return RedirectToAction("Create");
+                return RedirectToAction("Create","Product");
             }
             return View();
         }
@@ -41,9 +41,9 @@ namespace WebApplication2.Controllers
         public IActionResult SignIn(IFormCollection form)
         {
             User us = new User();
-            us.Emailid = form["emailid"].ToString();
+            us.EmailId = form["emailid"].ToString();
             us.password = form["password"].ToString();
-            int res = context.Check(us.Emailid,us.password);
+            int res = context.Check(us.EmailId, us.password);
             if(res==1)
             {
                 return RedirectToAction("List", "Product");

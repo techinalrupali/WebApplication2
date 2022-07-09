@@ -21,9 +21,10 @@ namespace WebApplication2.Models
             cmd = new SqlCommand(str, con);
             con.Open();
             cmd.Parameters.AddWithValue("@fullname", us.FullName);
-            cmd.Parameters.AddWithValue("@emailid", us.Emailid);
+            cmd.Parameters.AddWithValue("@emailid", us.EmailId);
             cmd.Parameters.AddWithValue("@password", us.password);
-            cmd.Parameters.AddWithValue("@roleid", us.RoleId);
+            cmd.Parameters.AddWithValue("@roleid", 2);
+            
             int res = cmd.ExecuteNonQuery();
             con.Close();
             return res;
@@ -35,7 +36,7 @@ namespace WebApplication2.Models
             con.Open();
             cmd.Parameters.AddWithValue("@id", us.Id);
             cmd.Parameters.AddWithValue("@fullname", us.FullName);
-            cmd.Parameters.AddWithValue("@emailid", us.Emailid);
+            cmd.Parameters.AddWithValue("@emailid", us.EmailId);
             cmd.Parameters.AddWithValue("@password", us.password);
             cmd.Parameters.AddWithValue("@roleid", us.RoleId);
             int res = cmd.ExecuteNonQuery();

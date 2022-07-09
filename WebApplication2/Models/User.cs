@@ -9,7 +9,7 @@ namespace WebApplication2.Models
     {
         public int Id { get; set; }
         public string FullName { get; set; }
-        public string Emailid { get; set; }
+        public string EmailId { get; set; }
         public string password { get; set; }
         public int RoleId { get; set; }
 
